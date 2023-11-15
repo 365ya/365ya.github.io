@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script>
-    function openNewHTML() {
-        window.location.href = "index.html";
-    }
-</script>
-
   <style>
     body {
       margin: 0;
@@ -37,55 +31,41 @@
     .header-1 img {width: 100%;
     height: 100%;}
 
-    .tab {
-      overflow: hidden;
-      border: 1px solid #ccc;
-      background-color: #f1f1f1;
-      width: 200px;
-
+    .categories {
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      font-size: 50px;
     }
 
-
-    .tab button {
-      background-color: inherit;
-      float: left;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      padding: 14px 16px;
-      transition: 0.3s;
-      height: calc(100% - 287.86px);
-      overflow-y: auto;
-      margin-top: 0%;
-      width: 200px;
-    }
-
-    .tab button:hover {
+    .category {
+      flex: 0 0 auto;
+      width: 400px;
+      height: 100px;
+      margin-right: 0%;
       background-color: #ddd;
+      flex-direction: column;
+      text-align: center;
+      
+    }
+    .content {
+      margin-top: 20px;
     }
 
-    .tab button.active {
-      background-color: #ccc;
-    }
-
-    .tabcontent {
-      display: none;
-      padding: 6px 12px;
-      border: 1px solid #ccc;
-      border-top: none;
-    }
-
-    .tabcontent img {width: 100%;
+    .content img {width: 100%;
     height: 100%;}
 
-    .tabcontent h3 {
-      margin-top: 0;
+    .content div {
+      display: none;
+    }
+    .content div.show {
+      display: block;
     }
 
   </style>
 </head>
 <body>
-  
+
   <div class="header-1" onclick="openNewHTML()">
     <img src="image_s2/Group 119.png" alt="이미지 1">
   </div>
@@ -93,87 +73,67 @@
     <img src="image_s2/Group 158.png" alt="이미지 2">
   </div> 
 
-
-  <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'content1')">유통기한</button>
-    <button class="tablinks" onclick="openTab(event, 'content2')">식품영양정보</button>
-    <button class="tablinks" onclick="openTab(event, 'content3')">식품제조정보</button>
-    <button class="tablinks" onclick="openTab(event, 'content4')">식품특성정보</button>
-    <button class="tablinks" onclick="openTab(event, 'content5')">식품안전정보</button>
-    <button class="tablinks" onclick="openTab(event, 'content6')">기타식품정보</button>
+  <div class="categories">
+    <div class="category" onclick="showContent(1)">유통기한</div>
+    <div class="category" onclick="showContent(2)">식품영양정보</div>
+    <div class="category" onclick="showContent(3)">식품제조정보</div>
+    <div class="category" onclick="showContent(4)">식품특성정보</div>
+    <div class="category" onclick="showContent(5)">식품안전정보</div>
+    <div class="category" onclick="showContent(6)">기타식품정보</div>
   </div>
 
-  <div id="content1" class="tabcontent">
-    <h3>    <img src="image_s2/유통기한(첫).png" alt="Vertical Image 1">
-    </h3>
-    <p><img src="image_s2/유통기한.png" alt="Vertical Image 2"></p>
-  </div>
-
-  <div id="content2" class="tabcontent">
-    <h3> <img src="image_s2/식품영양정보(첫).png" alt="이미지 4">      
-      </h3>
-    <p><img src="image_s2/알레르기.png" alt="이미지 4">
-      <img src="image_s2/소비기한.png" alt="이미지 5">
-      <img src="image_s2/영양정보.png" alt="이미지 6">
-      <img src="image_s2/원재료명.png" alt="이미지 7">
-      <img src="image_s2/주의사항.png" alt="이미지 8">
-      <img src="image_s2/보관방법.png" alt="이미지 9">
-      <img src="image_s2/내용량.png" alt="이미지 10">
-      <img src="image_s2/제품명.png" alt="이미지 11">
-      <img src="image_s2/제조일자.png" alt="이미지 12"></p>
-  </div>
-
-  <div id="content3" class="tabcontent">
-    <h3>    <img src="image_s2/식품제조정보(첫).png" alt="이미지 13">
-      
-</h3>
-    <p><img src="image_s2/분리배출.png" alt="이미지 14">
-      <img src="image_s2/영업소.png" alt="이미지 15">
-      <img src="image_s2/제조가공 방법.png" alt="이미지 16"></p>
-  </div>
-
-  <div id="content4" class="tabcontent">
-    <h3>    <img src="image_s2/식품특성정보(첫).png" alt="이미지 17">
-
-  </h3>
-    <p>      <img src="image_s2/성분명.png" alt="이미지 18">
-      <img src="image_s2/조리법.png" alt="이미지 19">
-      <img src="image_s2/특성마크.png" alt="이미지 20">
-      <img src="image_s2/품질유지기한.png" alt="이미지 21"></p>
-  </div>
-
-  <div id="content5" class="tabcontent">
-    <h3>   <img src="image_s2/식품안전정보(첫).png" alt="이미지 22">
-      
-  </h3>
-    <p><img src="image_s2/고객상담실.png" alt="이미지 23">
-      <img src="image_s2/브랜드 로고.png" alt="이미지 24">
-      <img src="image_s2/제품교환장소.png" alt="이미지 25">
-      <img src="image_s2/포장재질.png" alt="이미지 26"></p>
-  </div>
-
-  <div id="content6" class="tabcontent">
-    <h3><img src="image_s2/기타식품정보(첫).png" alt="이미지 27">
-
-  </h3>
-    <p>      <img src="image_s2/품목보고번호.png" alt="이미지 28">
-      <img src="image_s2/기타표시사항.png" alt="이미지 29">
-      <img src="image_s2/브랜드 링크.png" alt="이미지 30">/p>
+  <div class="content">
+    <div id="content1" class="show">
+      <h3><img src="image_s2/유통기한(첫).png" alt="Vertical Image 1"></h3>
+      <p><img src="image_s2/유통기한.png" alt="Vertical Image 2"></p>
+    </div>
+    <div id="content2">
+      <h3><img src="image_s2/식품영양정보(첫).png" alt="이미지 4"></h3>
+      <p><img src="image_s2/알레르기.png" alt="이미지 4">
+        <img src="image_s2/소비기한.png" alt="이미지 5">
+        <img src="image_s2/영양정보.png" alt="이미지 6">
+        <img src="image_s2/원재료명.png" alt="이미지 7">
+        <img src="image_s2/주의사항.png" alt="이미지 8">
+        <img src="image_s2/보관방법.png" alt="이미지 9">
+        <img src="image_s2/내용량.png" alt="이미지 10">
+        <img src="image_s2/제품명.png" alt="이미지 11">
+        <img src="image_s2/제조일자.png" alt="이미지 12"></p>
+    </div>
+    <div id="content3">
+      <h3><img src="image_s2/식품제조정보(첫).png" alt="이미지 13"></h3>
+      <p><img src="image_s2/분리배출.png" alt="이미지 14">
+        <img src="image_s2/영업소.png" alt="이미지 15">
+        <img src="image_s2/제조가공 방법.png" alt="이미지 16"></p>
+    </div>
+    <div id="content4">
+      <h3<img src="image_s2/식품특성정보(첫).png" alt="이미지 17"></h3>
+      <p><img src="image_s2/성분명.png" alt="이미지 18">
+        <img src="image_s2/조리법.png" alt="이미지 19">
+        <img src="image_s2/특성마크.png" alt="이미지 20">
+        <img src="image_s2/품질유지기한.png" alt="이미지 21"></p>
+    </div>
+    <div id="content5">
+      <h3><img src="image_s2/식품안전정보(첫).png" alt="이미지 22"></h3>
+      <p><img src="image_s2/고객상담실.png" alt="이미지 23">
+        <img src="image_s2/브랜드 로고.png" alt="이미지 24">
+        <img src="image_s2/제품교환장소.png" alt="이미지 25">
+        <img src="image_s2/포장재질.png" alt="이미지 26"></p>
+    </div>
+    <div id="content6">
+      <h3><img src="image_s2/기타식품정보(첫).png" alt="이미지 27"></h3>
+      <p><img src="image_s2/품목보고번호.png" alt="이미지 28">
+        <img src="image_s2/기타표시사항.png" alt="이미지 29">
+        <img src="image_s2/브랜드 링크.png" alt="이미지 30"></p>
+    </div>
   </div>
 
   <script>
-    function openTab(evt, tabName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
+    function showContent(category) {
+      var contentDivs = document.querySelectorAll('.content div');
+      for (var i = 0; i < contentDivs.length; i++) {
+        contentDivs[i].classList.remove('show');
       }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
+      document.getElementById('content' + category).classList.add('show');
     }
   </script>
 </body>
